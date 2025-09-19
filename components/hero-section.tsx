@@ -1,17 +1,18 @@
 import React from "react";
 import Lockup from "./common/lockup";
 import Navbar from "./navbar";
+import { SquareChevronDown } from "lucide-react";
 
 const HeroSection: React.FC = () => {
 	return (
 		<div
-			className="min-h-[80vh] flex flex-col justify-around items-center overflow-hidden relative"
+			className="min-h-[80vh] flex flex-col justify-between items-center overflow-hidden relative py-10"
 			style={{
 				background:
 					"linear-gradient(152.66deg, #FFFDF6 19.6%, #DCE8F8 64.34%, #ABD8EF 94.87%)",
 			}}>
 			{/* hero text */}
-			<div className="flex items-center justify-center flex-col max-w-lg px-4 ">
+			<div className="flex items-center justify-center flex-col max-w-lg px-4 mt-10">
 				<Lockup title="More Than Money:" />
 				<Lockup title="Meet LZAR" />
 
@@ -19,6 +20,8 @@ const HeroSection: React.FC = () => {
 					The money designed for South Africa — fast to move, easy to save, and built for
 					loyalty and rewards.
 				</p>
+
+				<SquareChevronDown className="mt-10 animate-bounce text-muted-foreground" />
 			</div>
 
 			{/* hero navbar */}
