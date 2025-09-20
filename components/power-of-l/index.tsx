@@ -2,6 +2,7 @@ import { Coins, Crown, ShieldCheck, TicketIcon } from "lucide-react";
 import Lockup from "../common/lockup";
 import PowerCard, { iPowerCardProps } from "./power-card";
 import React from "react";
+import CurrencyCard from "./CurrencyCard";
 
 const powerCardData: iPowerCardProps[] = [
 	{
@@ -49,6 +50,9 @@ const PowerOfLSection: React.FC = () => {
 					action={item?.action}
 				/>
 			))}
+
+			{/* currency card */}
+			<CurrencyCard />
 		</section>
 	);
 };
