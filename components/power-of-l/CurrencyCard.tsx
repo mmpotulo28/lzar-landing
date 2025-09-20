@@ -3,13 +3,24 @@ import { Card } from "../ui/card";
 import Image from "next/image";
 import { SparklesCore } from "../ui/shadcn-io/sparkles";
 
+const CurrencyButton: React.FC<{ src: string; alt: string; label: string }> = ({
+	src,
+	alt,
+	label,
+}) => (
+	<button className="bg-background text-foreground w-full h-20 rounded-lg flex items-center justify-evenly gap-2 z-2">
+		<Image src={src} alt={alt} width={50} height={50} className="object-contain rounded-xl" />
+		{label}
+	</button>
+);
+
 const CurrencyCard: React.FC = () => {
 	return (
 		<Card
 			className="py-0 relative overflow-hidden
   ">
 			{/* left currency buttons */}
-			<div className="relative flex flex-col items-center justify-between pl-8 pr-4 py-6 space-x-4 h-full w-[60%] z-1 bg-white/2 backdrop-blur-xs">
+			<div className="relative flex flex-col items-center justify-between pl-8 pr-4 py-6 space-x-4 h-full w-[55%] z-1 bg-white/2 backdrop-blur-xs">
 				<SparklesCore
 					background="transparent"
 					minSize={0.6}
@@ -19,38 +30,12 @@ const CurrencyCard: React.FC = () => {
 					particleColor="#FFFFFF"
 					speed={1}
 				/>
-				<button className="bg-background text-foreground w-full h-20 rounded-lg flex items-center justify-evenly gap-2 z-2">
-					<Image
-						src={"/images/us-flag.png"}
-						alt="USD"
-						width={50}
-						height={50}
-						className="object-contain rounded-xl"
-					/>
-					USD
-				</button>
+
+				<CurrencyButton src={"/images/us-flag.png"} alt="USD" label="USD" />
 				<ArrowUpDown className="mx-auto my-2 text-background" />
-				<button className="bg-background text-foreground w-full h-20 rounded-lg flex items-center justify-evenly gap-2 z-2">
-					<Image
-						src={"/images/lzar.png"}
-						alt="LZAR"
-						width={50}
-						height={50}
-						className="object-contain rounded-xl"
-					/>
-					LZAR
-				</button>
+				<CurrencyButton src={"/images/lzar.png"} alt="LZAR" label="LZAR" />
 				<ArrowUpDown className="mx-auto my-2 text-background" />
-				<button className="bg-background text-foreground w-full h-20 rounded-lg flex items-center justify-evenly gap-2 z-2">
-					<Image
-						src={"/images/sa-flag.png"}
-						alt="ZAR"
-						width={50}
-						height={50}
-						className="object-contain rounded-xl"
-					/>
-					ZAR
-				</button>
+				<CurrencyButton src={"/images/sa-flag.png"} alt="ZAR" label="ZAR" />
 			</div>
 
 			<Image

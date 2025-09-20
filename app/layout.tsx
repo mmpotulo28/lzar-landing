@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Georama } from "next/font/google";
 import "./globals.css";
 import HeroSection from "@/components/hero-section";
+import Footer from "@/components/footer";
 
 const georama = Georama({
 	variable: "--font-georama",
@@ -23,6 +24,7 @@ export default function RootLayout({
 			<body className={`${georama.variable} antialiased`}>
 				<HeroSection />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
