@@ -4,7 +4,11 @@ export interface iLockupProps {
 }
 
 const Lockup: React.FC<iLockupProps> = ({ title, size = "5xl" }) => {
-	return <div className={`flex items-center  font-medium text-${size} h-14`}>{title}</div>;
+	return (
+		<div className={`flex items-center ${size ? `text-${size}` : "text-5xl"} font-medium h-14`}>
+			{title}
+		</div>
+	);
 };
 
 export default Lockup;
